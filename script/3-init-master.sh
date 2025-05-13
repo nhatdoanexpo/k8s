@@ -3,9 +3,8 @@ set -e
 
 echo "[1] Init Kubernetes master"
 kubeadm init \
-  --apiserver-advertise-address=$(hostname -i) \
+  --apiserver-advertise-address=172.30.66.56 \
   --pod-network-cidr=192.168.0.0/16 \
-  --cri-socket /run/containerd/containerd.sock \
   --upload-certs
 
 echo "[2] Setup kube config"
